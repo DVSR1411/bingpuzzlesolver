@@ -1,0 +1,40 @@
+{
+    "manifest_version": 3,
+    "name": "Bing Puzzle Solver",
+    "version": "1.0", 
+    "description": "Solves Bing image puzzles automatically or manually.",
+    "permissions": [
+        "scripting",
+        "activeTab",
+        "tabs"
+    ],
+    "host_permissions": [
+        "https://www.bing.com/spotlight/*"
+    ],
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "images/image16.png",
+            "48": "images/image32.png",
+            "128": "images/image128.png"
+        }
+    },
+    "icons": {
+        "16": "images/image16.png",
+        "32": "images/image32.png",
+        "128": "images/image128.png",
+        "192": "images/image192.png",
+        "512": "images/image512.png"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://www.bing.com/spotlight/*"
+            ],
+            "js": [
+                "solver.js",
+                "content.js"
+            ]
+        }
+    ]
+}
